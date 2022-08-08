@@ -22,15 +22,15 @@
         <div class="selectorArea" id="selectorNombre">
             <p class="textoPadding" id="escribeNombre">ESCRIBE TU NOMBRE: </p>
              <input class="selectEach" 
-                v-model="NombreIngresado" id="inputNombre">
+                v-model="nombreIngresado" id="inputNombre">
         </div>
-        <button id="botonDesaparece" v-if="NombreIngresado" class="botonRojo" @click="mostrarNombreInv">ENVIAR</button>
+        <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click="mostrarNombreInv">ENVIAR</button>
         
-        <p class="textoPadding" v-if="NombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
+        <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
         <div id="pergaminoConNombre">
             <div id="pergamino"></div>
             <transition name="fade">
-                <div id="vueNombreInvertido"> {{NombreInv}}</div>
+                <div id="vueNombreInvertido"> {{nombreInv}}</div>
             </transition>
         </div>
     </div>

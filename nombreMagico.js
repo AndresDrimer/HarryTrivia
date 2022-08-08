@@ -2,13 +2,13 @@
 let app = new Vue({
     el:"#app",
     data:{
-      NombreIngresado: "",
-      NombreInv: "",
+      nombreIngresado: "",
+      nombreInv: "",
       mensaje: "TU NOMBRE MÁGICO ES: ",
     },
     methods: {
       mostrarNombreInv: function () {
-        this.NombreInv = this.NombreIngresado.split("").reverse().join("")
+        this.nombreInv = this.nombreIngresado.split("").reverse().join("")
       }
    
     },
