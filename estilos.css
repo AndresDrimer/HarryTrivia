@@ -171,16 +171,22 @@ font-size: 25px;
     position: relative;
 }   
 @keyframes hacerAparecer {
-    from{
+    0%{
         opacity:0;
     }
-    to{
+    50%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
         opacity:1;
     }
 }
 #vueNombreInvertido{
     position: absolute;
-    top: 70%;  
+    top: 50%;  
     left: 52%;
     transform: translate(-50%, -50%); 
     font-size: 50px;
@@ -189,13 +195,13 @@ font-size: 25px;
     font-family: Harry;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: hacerAparecer 6s ease-in-out;
-    -moz-animation: hacerAparecer 6s ease-in-out;
-    -webkit-animation: hacerAparecer 6s ease-in-out;
-    -o-animation: hacerAparecer 6s ease-in-out;
+    animation: hacerAparecer 4s ease-in-out;
+    -moz-animation: hacerAparecer 4s ease-in-out;
+    -webkit-animation: hacerAparecer 4s ease-in-out;
+    -o-animation: hacerAparecer 4s ease-in-out;
 }
 .v-enter-active{
-  transition: opacity 3s ease-in-out;
+  transition: opacity 4s ease-in-out;
 }
 .v-enter-from {
   opacity: 0;
@@ -213,6 +219,19 @@ font-size: 25px;
     color:#8A757E;
     
 }
+/* animacion de transition vue */
+.slide-fade-enter-active {
+    transition: all 0.2s ease-out;
+  }
+  
+  .slide-fade-leave-active {
+    transition: all 0.2s ease-out;
+  }
+  
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    opacity: 0;
+  }
 /* RESPONSIVE */
 /* celular */
 @media screen and (max-width: 768px) {

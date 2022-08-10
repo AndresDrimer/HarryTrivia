@@ -18,13 +18,15 @@
 
     <!-- hasta aca header -->
 
-    <div class="contenedorNombre" id="app">    
-        <div class="selectorArea" id="selectorNombre">
+    <div class="contenedorNombre" id="app">   
+        <Transition name="slide-fade"> 
+        <div class="selectorArea" id="selectorNombre" v-show="show">
             <p class="textoPadding" id="escribeNombre">ESCRIBE TU NOMBRE: </p>
              <input class="selectEach" 
                 v-model="nombreIngresado" id="inputNombre">
         </div>
-        <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click="mostrarNombreInv">ENVIAR</button>
+        </Transition>
+        <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click.once="mostrarNombreInv" v-show="show">ENVIAR</button>
         
         <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
         <div id="pergaminoConNombre">

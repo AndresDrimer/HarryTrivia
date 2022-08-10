@@ -5,10 +5,12 @@ let app = new Vue({
       nombreIngresado: "",
       nombreInv: "",
       mensaje: "TU NOMBRE MÁGICO ES: ",
+      show: true
     },
     methods: {
       mostrarNombreInv: function () {
         this.nombreInv = this.nombreIngresado.split("").reverse().join("")
+        this.show = false
       }
    
     },
