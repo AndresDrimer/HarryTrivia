@@ -21,7 +21,9 @@
     <div class="contenedorCartaHarry" id="datosCarta">
         <div class="selectorArea" id="selectorNombre">
             <p>NOMBRE: </p>
-            <select name="" id="selectName" class="selectEach"></select>
+            <select id="selectName" class="selectEach" v-model="nombres">
+                <option v-for= "nom in nombres" :value="nom"> {{nombres}}</option>
+            </select>
         </div>
         <div id="fotoCarta"></div>
         <div class="selectorArea">

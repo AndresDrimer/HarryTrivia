@@ -1,29 +1,17 @@
-// CARTA promise
-
-
-
-
-    // console.log(imagen)  
-    // document.getElementById("fotoCarta").style.backgroundImage = "url(imagen)"
-    
-    // var names = document.querySelector('#selectName');
-    // names.innerHTML = '' + 
-    //   '<option value="nombre">'nombre'</option>'
-      
-//     function random(min, max) {
-//         return Math.floor((Math.random() * (max - min + 1)) + min);
-//     }
-
-
 let datosCarta = new Vue({
-    el: "#selectName",
+    el: "#datosCarta",
     data: {
-        urlTodos: "http://hp-api.herokuapp.com/api/characters" ,
+        urlTodos: "http://hp-api.herokuapp.com/api/characters",
         nombre: "",
         actore: "",
         casa: "",
         anio: "",
-        imagen: ""
+        imagen: "",
+        nombres: [],
+        casas: [],
+        anios:  [],
+        actores:  []
+        
 
     },
     methods: {
@@ -31,14 +19,31 @@ let datosCarta = new Vue({
         const response = await fetch(this.urlTodos)
         const data = await response.json()
         const {name, actor, image, house,yearOfBirth} = data
-        console.log(data[0].name)
+        
 //    aca no hay azar, siemrpe es la de harry
         this.nombre=data[0].name
         this.casa = data[0].house
         this.anio = data[0].yearOfBirth
         this.imagen = data[0].image
         this.actore=data[0].actor
-        console.log(this.anio)
+       
+        
+
+        function numeroAzar (min, max) {
+            return Math.floor((Math.random() * (max - min + 1)) + min);
+            }
+        
+
+        function asignarListas () {
+            this.nombres=[data[0].name, data[1].name, data[2].name]
+            this.casas= [data[0].house, data[1].house, data[2].house]
+            this.anios=[data[0].yearOfBirth, data[1].yearOfBirth, data[2].yearOfBirth]
+            this.actores=[data[0].actor, data[1].actor, data[2].actor]     
+            }
+
+
+        asignarListas()
+            console.log(nombres)
         },
     },
 })
@@ -51,6 +56,7 @@ let datosCarta = new Vue({
 
 
 datosCarta.traerCarta()
+
 
 
    
