@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Amethysta&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     
 </head>
-<body>
+<body id="bodyNombre">
 
     <div id="headerTemplate">
        <component v-bind:is="vista"></component>
@@ -25,7 +25,7 @@
              <input class="selectEach" 
                 v-model="nombreIngresado" id="inputNombre">
         </div>
-        </Transition>
+        </transition>
         <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click.once="mostrarNombreInv" v-show="show">ENVIAR</button>
         
         <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>

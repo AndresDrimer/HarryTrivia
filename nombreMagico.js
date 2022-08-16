@@ -11,8 +11,11 @@ let app = new Vue({
       mostrarNombreInv: function () {
         this.nombreInv = this.nombreIngresado.split("").reverse().join("")
         this.show = false
+        
       }
    
     },
   });
   
+  let nombreJugador=localStorage.setItem('nombre', this.nombreInv);        
+  console.log(nombreJugador)
