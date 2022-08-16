@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@700&family=Amethysta&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fonts.css">
 </head>
-<body>
+<body id="bodyCartaHarry">
 
     <div id="headerTemplate">
         <component v-bind:is="vista"></component>
@@ -21,22 +21,28 @@
     <div class="contenedorCartaHarry" id="datosCarta">
         <div class="selectorArea" id="selectorNombre">
             <p>NOMBRE: </p>
-            <select id="selectName" class="selectEach" v-model="nombres">
-                <option v-for= "nom in nombres" :value="nom"> {{nombres}}</option>
+            <select id="selectName" class="selectEach">
+                <option v-for="nombre in nombres" :value="nombre">{{nombre}}</option>
             </select>
         </div>
-        <div id="fotoCarta"></div>
+        <div id="fotoCarta" v-if="srcImg" :style="{ 'background-image': 'url(' + srcImg + ')' }"></div>
         <div class="selectorArea">
             <p>CASA:</p>
-            <select name="" id="" class="selectEach" ></select>
+            <select name="" id="" class="selectEach" >
+                <option v-for="casa in casas" :value="casa">{{casa}}</option>
+            </select>
         </div>
         <div class="selectorArea">
             <p>ACTOR/ACTRIZ:</p>
-            <select name="" id="" class="selectEach"></select>
+            <select name="" id="" class="selectEach">
+                <option v-for="actore in actores" :value="actore">{{actore}}</option>
+            </select>
         </div>
         <div class="selectorArea">
             <p>FECHA DE NACIMIENTO:</p>
-            <select name="" id="" class="selectEach"></select>
+            <select name="" id="" class="selectEach">
+                <option v-for="anio in anios" :value="anio">{{anio}}</option>
+            </select>
         </div>
         <div id="botoneraFinal">
             <a href="nombre.html" >
