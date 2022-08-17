@@ -19,30 +19,35 @@
 
 
     <div class="contenedorCartaHarry" id="datosCarta">
-        <div class="selectorArea" id="selectorNombre">
-            <p>NOMBRE: </p>
-            <select id="selectName" class="selectEach">
+        <div class="selectorArea" id="selectorNombre" >
+            <p>NOMBRE PERSONAJE: </p>
+            <select id="selectName" class="selectEach" v-model="selectedName" >
+                <option disabled value="">Seleccione personaje</option>
                 <option v-for="nombre in nombres" :value="nombre">{{nombre}}</option>
+            <p>{{nombreOk}}</p>
             </select>
+            
         </div>
         <div id="fotoCarta" v-if="srcImg" :style="{ 'background-image': 'url(' + srcImg + ')' }"></div>
         <div class="selectorArea">
             <p>CASA:</p>
-            <select name="" id="" class="selectEach" >
+            <select name="" id="" class="selectEach" v-model="selectedHouse">
+                <option disabled value="">Seleccione casa</option>
                 <option v-for="casa in casas" :value="casa">{{casa}}</option>
             </select>
         </div>
         <div class="selectorArea">
             <p>ACTOR/ACTRIZ:</p>
-            <select name="" id="" class="selectEach">
+            <select name="" id="" class="selectEach" v-model="selectedActore">
+                <option disabled value="">Seleccione actor/actriz</option>
                 <option v-for="actore in actores" :value="actore">{{actore}}</option>
             </select>
         </div>
       
         <div id="botoneraFinal">
-            <a href="nombre.html" >
-                <input type="submit" value="ENVIAR" class="botonRojo" >
-            </a>   
+            <!-- <a href="nombre.html" > -->
+                <input type="submit" value="ENVIAR" class="botonRojo" @click.once="puntuar()">
+            <!-- </a>    -->
         </div>
     </div>
     

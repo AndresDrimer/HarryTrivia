@@ -39,12 +39,12 @@ body{
 
 /* CARTA HARRY: HEADER */
 #bodyCartaHarry{
-    animation: transitionIn 1.75s;
+    animation: transitionIn 0.5s;
 }
 @keyframes transitionIn {
     from {
         opacity:0 ;
-        transform: translateY(-20px); 
+        transform: translateY(20000px); 
     }
     to {
         opacity:1 ;
@@ -93,11 +93,12 @@ body{
     width: 100%;
     /* background-image: url("img/fotito\ harry.png"); */
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size:contain;
     mix-blend-mode: normal;
+    background-position: center;
 }
 .selectorArea{
-    width: 100%;
+    width: 59%;
     padding: 12px 0;
     color: #21211F;
 }

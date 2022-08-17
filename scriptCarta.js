@@ -3,10 +3,23 @@ let datosCarta = new Vue({
     data: {
         urlTodos: "http://hp-api.herokuapp.com/api/characters",
         
+        nombreOk: "",
+        nombreMal1: "",
+        nombreMal2: "",
+        casaOk: "",
+        casaMal1: "",
+        casaMal2: "",
+        actoreOK:"",
+        actoreMal1:"",
+        actoreMal2: "",
         nombres: [],
         casas: [],
         actores:  [],
-        scrImg:""
+        scrImg:"", 
+        selectedName: "",
+        selectedHouse: "",
+        selectedActore: "",
+        puntaje: 0    
     },
     methods: {
         async traerCarta() {
@@ -17,18 +30,16 @@ let datosCarta = new Vue({
         this.srcImg=data[0].image
         
         function numeroPosibleAzar () {
-            return Math.floor(Math.random() * 401);
+            return Math.floor(Math.random() * 25);
             }
         
         numOk= 0 // porque este quiero que sea siempre harry
         numMal1= numeroPosibleAzar()
-        console.log("numMal1 es: " + numMal1)
         if (numMal1==numOk){
             return this.numMal1++;
         }
 
         numMal2= numeroPosibleAzar()
-        console.log("numMal2 es: " + numMal2)
         
         if (numMal2==numOk || numMal2==numMal1) {
             return this.numMal2++;
@@ -54,64 +65,68 @@ let datosCarta = new Vue({
         chequearNumMal1(numMal1)
         
         chequearNumMal2(numMal2)
-        console.log("estos son numMal1 y 2 corregidos: " + numMal1, numMal2)
         
         // asignar nombres
         nombreOk=data[numOk].name
+        this.nombreOk=nombreOk 
         nombreMal1=data[numMal1].name
+        this.nombreMal1=nombreMal1
         nombreMal2=data[numMal2].name
-        this.nombres=[]
+        this.nombreMal2=nombreMal2
         this.nombres.push(nombreOk, nombreMal1, nombreMal2)
         this.nombres.sort()
-        console.log(this.nombres)
+        
+        
     
 
         // asignar casas
         casaOk=data[numOk].house
+        this.casaOk=casaOk
         casaMal1=data[numMal1].house
+        this.casaMal1=casaMal1
         casaMal2=data[numMal2].house
-        this.casas=[]
+        this.casaMal2=casaMal2 
         this.casas.push(casaOk, casaMal1, casaMal2)
         this.casas.sort()
-        console.log(this.casas)
+       
         
         
         // asignar actores
         actoreOk=data[numOk].actor
+        this.actoreOk=actoreOk
         actoreMal1=data[numMal1].actor
+        this.actoreMal1=actoreMal1
         actoreMal2=data[numMal2].actor
-        this.actores=[]
+        this.actoreMal2=actoreMal2
         this.actores.push(actoreOk,actoreMal1,actoreMal2)
         this.actores.sort()
-        console.log(this.actores)
-    
-      
-        // function asignarTodo(){
-            
-        //     asignarCasas()
-        //     asignarAnios()
-        //     asignarActores()
-        // }
-
-        // asignarTodo()
-        
-               
-        
+       
         },
+        
+        puntuar() {
+            console.log(this.selectedName, this.selectedHouse,this.selectedActore)
+            console.log(this.nombreOk, this.casaOk, this.actoreOk )
+            let contador = 0
+            
+            if (this.selectedName==this.nombreOk){
+                contador += 20
+            }
+            console.log(contador)
+            if (this.selectedHouse==this.casaOk){
+                contador += 30
+            }   
+            console.log(contador)    
+            if (this.selectedActore==this.actoreOk){
+                contador += 50
+            } 
+            console.log(contador) 
+            this.puntaje += contador  
+            console.log("puntaje: " + this.puntaje) 
+                       
+        },
+     
+
     },
 })
 
-
-    // let imgCarta = document.getElementById("fotoCarta")
-    // let fotitoCarta = document.createElement("fotitoCartita")
-    // fotitoCarta.setAttribute("src", imagen)
-    // imgCarta.appendChild(fotitoCarta) 
-
-
 datosCarta.traerCarta()
-
-
-
-   
-    
-    
