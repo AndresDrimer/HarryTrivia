@@ -20,7 +20,7 @@
 
     <div class="contenedorCartaHarry" id="datosCarta">
         <div class="selectorArea" id="selectorNombre" >
-            <p>NOMBRE PERSONAJE: </p>
+            <p class="titulitoSelect">NOMBRE PERSONAJE: </p>
             <select id="selectName" class="selectEach" v-model="selectedName" >
                 <option disabled value="">Seleccione personaje</option>
                 <option v-for="nombre in nombres" :value="nombre">{{nombre}}</option>
@@ -30,14 +30,14 @@
         </div>
         <div id="fotoCarta" v-if="srcImg" :style="{ 'background-image': 'url(' + srcImg + ')' }"></div>
         <div class="selectorArea">
-            <p>CASA:</p>
+            <p class="titulitoSelect">CASA:</p>
             <select name="" id="" class="selectEach" v-model="selectedHouse">
                 <option disabled value="">Seleccione casa</option>
                 <option v-for="casa in casas" :value="casa">{{casa}}</option>
             </select>
         </div>
         <div class="selectorArea">
-            <p>ACTOR/ACTRIZ:</p>
+            <p class="titulitoSelect">ACTOR/ACTRIZ:</p>
             <select name="" id="" class="selectEach" v-model="selectedActore">
                 <option disabled value="">Seleccione actor/actriz</option>
                 <option v-for="actore in actores" :value="actore">{{actore}}</option>
@@ -45,14 +45,52 @@
         </div>
       
         <div id="botoneraFinal">
-            <!-- <a href="nombre.html" > -->
-                <input type="submit" value="ENVIAR" class="botonRojo" @click.once="puntuar()">
-            <!-- </a>    -->
+            <a href="#escribeNombre" >
+                <input type="submit" value="LISTO" class="botonRojo" @click.once="puntuar()">
+            </a>   
         </div>
     </div>
+
+        <!-- NOMBRE MAGICO -->
+    <div class="contenedorNombre" id="app">   
+        <Transition name="slide-fade"> 
+        <div class="selectorArea" id="selectorNombre" v-show="show">
+            <p class="textoPadding" id="escribeNombre">ESCRIBE TU NOMBRE: </p>
+             <input class="selectEach" 
+                v-model="nombreIngresado" id="inputNombre">
+        </div>
+        </transition>
+        <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click.once="mostrarNombreInv" v-show="show">VER NOMBRE MÁGICO</button>
+        
+        <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
+
+        <transition name="fade">
+            <div id="vueNombreInvertido"> {{nombreInv}}</div>
+        </transition>
+        </div>
+    </div>
+       
+
+        
+     
+        <!-- PUNTAJES -->
+    <div id="seccionPuntajes">
+        <div id="pergaminoPuntaje">
+            
+
+        </div>
+    </div>
+
+
+    <div class="contenedorNombre">
+        <div id="botoneraFinalNombre">
+            <button type="button" class="botonAmarillo"><a href="/puntajes.html" class="linkBotones">NUEVA CARTA</a></button> 
+           
+        </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="nombreMagico.js"></script>
     <script src="scriptCarta.js"></script>
     <script src="script.js"></script>
 </body>

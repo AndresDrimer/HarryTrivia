@@ -33,7 +33,8 @@ let datosCarta = new Vue({
             return Math.floor(Math.random() * 25);
             }
         
-        numOk= 0 // porque este quiero que sea siempre harry
+        numOk= numeroPosibleAzar() // Harry es el cero
+        
         numMal1= numeroPosibleAzar()
         if (numMal1==numOk){
             return this.numMal1++;
@@ -66,6 +67,8 @@ let datosCarta = new Vue({
         
         chequearNumMal2(numMal2)
         
+        // asignar imagen
+        this.srcImg=data[numOk].image
         // asignar nombres
         nombreOk=data[numOk].name
         this.nombreOk=nombreOk 
@@ -122,11 +125,40 @@ let datosCarta = new Vue({
             console.log(contador) 
             this.puntaje += contador  
             console.log("puntaje: " + this.puntaje) 
+
+            // sostener memoria
+            localStorage.setItem("puntos", this.puntaje);
+            const puntajeAcumulado = localStorage.getItem("puntos");
+            console.log("aca " + puntajeAcumulado)
+
                        
         },
      
 
     },
+
 })
 
+
+
+
+
 datosCarta.traerCarta()
+
+
+
+const seccionPuntajes = new Vue({
+    el: '#seccionPuntajes',
+    data: {
+        records: {
+            TROMLOV: 2000,
+            RETTOPYRRAH: 1620,
+            ENOIAMREH: 950,
+            NombreInv
+
+        }
+        
+    }
+
+})
+

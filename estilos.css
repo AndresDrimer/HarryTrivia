@@ -98,15 +98,20 @@ body{
     background-position: center;
 }
 .selectorArea{
-    width: 59%;
+    width: 62%;
     padding: 12px 0;
     color: #21211F;
+}
+.titulitoSelect{
+    text-align: center;
+    padding-bottom: 3px;
 }
 .selectEach{
     background-color:#D68F58;
     width: 100%;
     height: 35px;
 }
+
 .selectEach:focus{
     background-color: #F4F3F1;
 }
@@ -114,12 +119,13 @@ body{
     background-color:#762A2F;
     width:151px;
     height: 40px;
-    color: #F4F3F1;   
+    color: #F4F3F1;  
+    margin-top: 15px;
 }
 #botoneraFinal{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 12px 0;
 }
 
@@ -173,15 +179,10 @@ body{
     background-color:#D68F58;
     width: 45%;
     height: 40px;
-    color: #F4F3F1;   
+    color: #F4F3F1;
+    margin-top: -10px;  
 }
-#pergaminoConNombre{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 300px;
-}
+
 .textoPadding{
     padding: 20px 0;
 }
@@ -189,14 +190,7 @@ body{
 padding-top: 55px;
 font-size: 25px;
 }
-#pergamino{
-    height:80%;
-    width: 100%;
-    background-image: url("img/pergamino_ok.png");
-    background-size:cover;
-    background-repeat: no-repeat;
-    position: relative;
-}   
+   
 @keyframes hacerAparecer {
     0%{
         opacity:0;
@@ -212,10 +206,7 @@ font-size: 25px;
     }
 }
 #vueNombreInvertido{
-    position: absolute;
-    top: 50%;  
-    left: 52%;
-    transform: translate(-50%, -50%); 
+    text-align: center;
     font-size: 50px;
     width: 300px;
     word-wrap: break-word; 
@@ -226,6 +217,9 @@ font-size: 25px;
 }
 #botoneraFinalNombre{
     padding-top: 35px;
+    display: flex;
+    justify-content: center;
+
 }
 
 
@@ -250,6 +244,26 @@ font-size: 25px;
   .slide-fade-leave-to {
     opacity: 0;
   }
+
+
+ /* PUNTAJE  */
+ #seccionPuntajes{
+    display: flex;
+    justify-content: center;
+ }
+#pergaminoPuntaje{
+    margin-top: 50px;
+    width: 400px;
+    height: 500px;
+    background-image: url("img/pergamino_ok.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+} 
+
+
+
+
 /* RESPONSIVE */
 /* celular */
 @media screen and (max-width: 768px) {
