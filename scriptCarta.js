@@ -47,12 +47,12 @@ let datosCarta = new Vue({
             selectedHouse: "",
             selectedActore: "",
             puntaje: 0,
-            records: {"TROMEDLOV" : '2000',"RETTOPYRRAH": '1620', "ENOIAMREH": '950'},
             nombreIngresado: "",
             nombreInv: "",
             mensaje: "TU NOMBRE MÁGICO ES: ",
             show: true,
             show2: false
+            
     }    
     },
     methods: {
@@ -107,6 +107,8 @@ let datosCarta = new Vue({
         
         chequearNumMal1(numMal1)
         chequearNumMal2(numMal2)
+        
+        
         
         // asignar imagen
         this.srcImg=data[numOk].image
@@ -180,14 +182,9 @@ let datosCarta = new Vue({
 
            
         mostrarNombreInv: function() {
-            this.nombreInv = this.nombreIngresado.split("").reverse().join("")
+            this.nombreInv = this.nombreIngresado.split("").reverse().join("").toUpperCase()
             this.show = false
             this.show2 = true
-            let nombreLista = this.nombreInv.toUpperCase()
-            let puntu = this.puntaje
-            this.records[nombreLista]=puntu
-            
-            console.log(this.records)
           },
      
 

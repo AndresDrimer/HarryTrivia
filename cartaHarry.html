@@ -49,7 +49,7 @@
       
         <div id="botoneraFinal">
             <a href="#escribeNombre" >
-                <input type="submit" value="LISTO" class="botonRojo" @click.once="puntuar()">
+                <input type="submit" value="*ENVIAR*" class="botonRojo" @click="puntuar()">
             </a>   
         </div>
     
@@ -81,7 +81,16 @@
         <div id="seccionPuntajes">
             <div id="pergaminoPuntaje">
                 <ul id="listaPuntajes" v-show="show2">
-                    <li id="listaRecords" v-for="(puntuacion, participante) in records">{{participante}}: {{puntuacion}}pts.</li>
+                    
+                    <li class="listaRecords" id="puntajePropio">{{nombreInv}}......{{puntaje}}pts.</li>
+                    <li class="listaRecords"></li>
+                    <li class="listaRecords"></li>
+                    <li class="listaRecords"></li>
+
+                    <li class="listaRecords">  *******  puntajes legendarios  *******  </li>
+                    <li class="listaRecords">TROMEDLOV......1900pts.</li>
+                    <li class="listaRecords">RETTOPYRRAH......1650pts.</li>
+                    <li class="listaRecords">ENOIAMREH......1230pts.</li>  
                 </ul>
             </div>
         </div>
@@ -89,11 +98,12 @@
 
         <div class="contenedorNombre">
             <div id="botoneraFinalNombre">
+                <a href="#datosCarta" class="botonLink">
                 <button type="button" class="botonAmarillo" @click="traerCarta()">NUEVA CARTA</a></button> 
-                
+                </a>
             </div>
         </div>
-        <a href="" id="botonTerminar">
+        <a href="" class="botonLink">
         <button type="button" class="botonRojo" >TERMINAR JUEGO</a></button></a>
     </div>
     

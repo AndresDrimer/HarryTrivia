@@ -212,7 +212,7 @@ font-size: 25px;
     font-family: Harry;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: hacerAparecer 6s ease-in-out;
+    animation: hacerAparecer 3s ease-in-out;
 }
 #botoneraFinalNombre{
     padding-top: 35px;
@@ -253,14 +253,14 @@ font-size: 25px;
 #pergaminoPuntaje{
     margin-top: 50px;
     width: 400px;
-    height: 400px;
+    height: 550px;
     background-image: url("img/pergamino_ok.png");
     background-size:cover;
     background-repeat: no-repeat;
     position: relative;
 } 
 
-#listaRecords{
+.listaRecords{
     font-family: Harry;
     font-size: 20px;
     margin-top: 55px;
@@ -270,7 +270,10 @@ font-size: 25px;
     list-style-type: none;
 
 }
-#botonTerminar{
+#puntajePropio{
+    font-size: 40px;
+}
+.botonLink{
     text-decoration: none;
     color:#F4F3F1
 }
