@@ -64,7 +64,7 @@
             </div>
             </transition>
             
-            <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click.once="mostrarNombreInv" v-show="show">VER NOMBRE MÁGICO</button>
+            <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click="mostrarNombreInv" v-show="show">VER NOMBRE MÁGICO</button>
             
             <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
 
@@ -93,6 +93,8 @@
                 
             </div>
         </div>
+        <a href="" id="botonTerminar">
+        <button type="button" class="botonRojo" >TERMINAR JUEGO</a></button></a>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

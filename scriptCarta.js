@@ -42,17 +42,12 @@ let datosCarta = new Vue({
             nombres: [],
             casas: [],
             actores:  [],
-            scrImg:"", 
+            scrImg:"http://hp-api.herokuapp.com/images/harry.jpg", 
             selectedName: "",
             selectedHouse: "",
             selectedActore: "",
             puntaje: 0,
-            records: {
-                TROMEDLOV: '2000',
-                RETTOPYRRAH: '1620',
-                ENOIAMREH: '950',
-                jugadorActual: this.puntaje
-            },
+            records: {"TROMEDLOV" : '2000',"RETTOPYRRAH": '1620', "ENOIAMREH": '950'},
             nombreIngresado: "",
             nombreInv: "",
             mensaje: "TU NOMBRE MÁGICO ES: ",
@@ -66,7 +61,7 @@ let datosCarta = new Vue({
         const data = await response.json()
         const {name, actor, image, house,yearOfBirth} = data
         
-        this.srcImg=data[0].image
+        
         
         function numeroPosibleAzar () {
             return Math.floor(Math.random() * 25);
@@ -89,13 +84,21 @@ let datosCarta = new Vue({
         
                 
         function chequearNumMal1(x){
+            if (x==numOk){
+                x++;
+            }
             while (data[x].house === "") {
                 x++;}
+            
             this.numMal1=x;
-            return this.numMal1;    
+            return this.numMal1; 
+               
         }
         
         function chequearNumMal2(x){
+            if (x==numMal1){
+                x++;
+            }
             while (data[x].house === "") {
                 x++;}
             this.numMal2=x;
@@ -103,13 +106,13 @@ let datosCarta = new Vue({
         }
         
         chequearNumMal1(numMal1)
-        
         chequearNumMal2(numMal2)
         
         // asignar imagen
         this.srcImg=data[numOk].image
         // asignar nombres
         nombreOk=data[numOk].name
+        this.nombres=[]
         this.nombreOk=nombreOk 
         nombreMal1=data[numMal1].name
         this.nombreMal1=nombreMal1
@@ -123,6 +126,7 @@ let datosCarta = new Vue({
 
         // asignar casas
         casaOk=data[numOk].house
+        this.casas=[]
         this.casaOk=casaOk
         casaMal1=data[numMal1].house
         this.casaMal1=casaMal1
@@ -135,6 +139,7 @@ let datosCarta = new Vue({
         
         // asignar actores
         actoreOk=data[numOk].actor
+        this.actores=[]
         this.actoreOk=actoreOk
         actoreMal1=data[numMal1].actor
         this.actoreMal1=actoreMal1
@@ -178,9 +183,11 @@ let datosCarta = new Vue({
             this.nombreInv = this.nombreIngresado.split("").reverse().join("")
             this.show = false
             this.show2 = true
-            this.nombreInv = this.records.jugadorActual 
-            this.puntaje = this.records.puntajeActual 
-            console.log(this.records.jugadorActual) 
+            let nombreLista = this.nombreInv.toUpperCase()
+            let puntu = this.puntaje
+            this.records[nombreLista]=puntu
+            
+            console.log(this.records)
           },
      
 

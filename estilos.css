@@ -207,7 +207,7 @@ font-size: 25px;
 #vueNombreInvertido{
     text-align: center;
     font-size: 50px;
-    width: 300px;
+    width: 500px;
     word-wrap: break-word; 
     font-family: Harry;
     text-transform: uppercase;
@@ -253,7 +253,7 @@ font-size: 25px;
 #pergaminoPuntaje{
     margin-top: 50px;
     width: 400px;
-    height: 500px;
+    height: 400px;
     background-image: url("img/pergamino_ok.png");
     background-size:cover;
     background-repeat: no-repeat;
@@ -270,7 +270,10 @@ font-size: 25px;
     list-style-type: none;
 
 }
-
+#botonTerminar{
+    text-decoration: none;
+    color:#F4F3F1
+}
 
 /* RESPONSIVE */
 /* celular */
