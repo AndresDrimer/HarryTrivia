@@ -91,7 +91,6 @@ body{
 #fotoCarta{
     height: 330px;
     width: 100%;
-    /* background-image: url("img/fotito\ harry.png"); */
     background-repeat: no-repeat;
     background-size:contain;
     mix-blend-mode: normal;

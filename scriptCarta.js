@@ -1,3 +1,29 @@
+
+// componente header
+const headerTemplate = new Vue({
+    el: "#headerTemplate",
+    data: {
+      vista: 'componente'
+    },
+    components: {
+      'componente': {
+        template: `<div id="headerTemplate">
+                      <div id="headerDesktop"></div>
+                      <div id="contenedorLogoHeader">
+                          <div id="flexLogoHeader">
+                              <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
+                              <img src='img/desktop/HARRY logo.png' id="logoHeader">
+                              <img src='img/desktop/signoPregunta.png' class="signoPreguntaLogoHeader">
+                          </div>
+                      </div>
+                  </div>`
+      }
+    }
+  });
+
+
+
+  
 let datosCarta = new Vue({
     el: "#datosCarta",
     data: {
@@ -19,7 +45,8 @@ let datosCarta = new Vue({
         selectedName: "",
         selectedHouse: "",
         selectedActore: "",
-        puntaje: 0    
+        puntaje: 0,
+            
     },
     methods: {
         async traerCarta() {
@@ -151,10 +178,11 @@ const seccionPuntajes = new Vue({
     el: '#seccionPuntajes',
     data: {
         records: {
-            TROMLOV: 2000,
+            TROMEDLOV: 2000,
             RETTOPYRRAH: 1620,
             ENOIAMREH: 950,
-            NombreInv
+           
+            
 
         }
         
