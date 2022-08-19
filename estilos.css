@@ -260,7 +260,16 @@ font-size: 25px;
     position: relative;
 } 
 
+#listaRecords{
+    font-family: Harry;
+    font-size: 20px;
+    margin-top: 55px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    list-style-type: none;
 
+}
 
 
 /* RESPONSIVE */

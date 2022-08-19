@@ -13,7 +13,7 @@
 
     <div id="headerTemplate">
         <component v-bind:is="vista"></component>
-     </div>
+    </div>
 
     <!-- hasta aca header -->
 
@@ -25,10 +25,12 @@
                 <option disabled value="">Seleccione personaje</option>
                 <option v-for="nombre in nombres" :value="nombre">{{nombre}}</option>
             <p>{{nombreOk}}</p>
-            </select>
-            
+            </select>   
         </div>
-        <div id="fotoCarta" v-if="srcImg" :style="{ 'background-image': 'url(' + srcImg + ')' }"></div>
+
+        <div id="fotoCarta" v-if="srcImg" :style="{ 'background-image': 'url(' + srcImg + ')' }">
+        </div>
+
         <div class="selectorArea">
             <p class="titulitoSelect">CASA:</p>
             <select name="" id="" class="selectEach" v-model="selectedHouse">
@@ -36,6 +38,7 @@
                 <option v-for="casa in casas" :value="casa">{{casa}}</option>
             </select>
         </div>
+
         <div class="selectorArea">
             <p class="titulitoSelect">ACTOR/ACTRIZ:</p>
             <select name="" id="" class="selectEach" v-model="selectedActore">
@@ -49,48 +52,51 @@
                 <input type="submit" value="LISTO" class="botonRojo" @click.once="puntuar()">
             </a>   
         </div>
-    </div>
+    
 
         <!-- NOMBRE MAGICO -->
-    <div class="contenedorNombre" id="app">   
-        <Transition name="slide-fade"> 
-        <div class="selectorArea" id="selectorNombre" v-show="show">
-            <p class="textoPadding" id="escribeNombre">ESCRIBE TU NOMBRE: </p>
-             <input class="selectEach" 
-                v-model="nombreIngresado" id="inputNombre">
-        </div>
-        </transition>
-        <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click.once="mostrarNombreInv" v-show="show">VER NOMBRE MÁGICO</button>
-        
-        <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
-
-        <transition name="fade">
-            <div id="vueNombreInvertido"> {{nombreInv}}</div>
-        </transition>
-        </div>
-    </div>
-       
-
-        
-     
-        <!-- PUNTAJES -->
-    <div id="seccionPuntajes">
-        <div id="pergaminoPuntaje">
+        <div class="contenedorNombre" id="app">   
+            <Transition name="slide-fade"> 
+            <div class="selectorArea" id="selectorNombre" v-show="show">
+                <p class="textoPadding" id="escribeNombre">ESCRIBE TU NOMBRE: </p>
+                <input class="selectEach" 
+                    v-model="nombreIngresado" id="inputNombre">
+            </div>
+            </transition>
             
+            <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click.once="mostrarNombreInv" v-show="show">VER NOMBRE MÁGICO</button>
+            
+            <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
 
+            <transition name="fade">
+                <div id="vueNombreInvertido"> {{nombreInv}}</div>
+            </transition>
+            
+        </div>
+        
+
+            
+        
+            <!-- PUNTAJES -->
+        <div id="seccionPuntajes">
+            <div id="pergaminoPuntaje">
+                <ul id="listaPuntajes" v-show="show2">
+                    <li id="listaRecords" v-for="(puntuacion, participante) in records">{{participante}}: {{puntuacion}}pts.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="contenedorNombre">
+            <div id="botoneraFinalNombre">
+                <button type="button" class="botonAmarillo" @click="traerCarta()">NUEVA CARTA</a></button> 
+                
+            </div>
         </div>
     </div>
-
-
-    <div class="contenedorNombre">
-        <div id="botoneraFinalNombre">
-            <button type="button" class="botonAmarillo" @click="datosCarta.traerCarta()">NUEVA CARTA</a></button> 
-           
-        </div>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
-    <script src="nombreMagico.js"></script>
+    <!-- <script src="nombreMagico.js"></script> -->
     <script src="scriptCarta.js"></script>
     
 </html>

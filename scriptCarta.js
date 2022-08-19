@@ -26,27 +26,39 @@ const headerTemplate = new Vue({
   
 let datosCarta = new Vue({
     el: "#datosCarta",
-    data: {
-        urlTodos: "http://hp-api.herokuapp.com/api/characters",
-        
-        nombreOk: "",
-        nombreMal1: "",
-        nombreMal2: "",
-        casaOk: "",
-        casaMal1: "",
-        casaMal2: "",
-        actoreOK:"",
-        actoreMal1:"",
-        actoreMal2: "",
-        nombres: [],
-        casas: [],
-        actores:  [],
-        scrImg:"", 
-        selectedName: "",
-        selectedHouse: "",
-        selectedActore: "",
-        puntaje: 0,
+    data() {
+        return {
+            urlTodos: "http://hp-api.herokuapp.com/api/characters",
             
+            nombreOk: "",
+            nombreMal1: "",
+            nombreMal2: "",
+            casaOk: "",
+            casaMal1: "",
+            casaMal2: "",
+            actoreOK:"",
+            actoreMal1:"",
+            actoreMal2: "",
+            nombres: [],
+            casas: [],
+            actores:  [],
+            scrImg:"", 
+            selectedName: "",
+            selectedHouse: "",
+            selectedActore: "",
+            puntaje: 0,
+            records: {
+                TROMEDLOV: '2000',
+                RETTOPYRRAH: '1620',
+                ENOIAMREH: '950',
+                jugadorActual: this.puntaje
+            },
+            nombreIngresado: "",
+            nombreInv: "",
+            mensaje: "TU NOMBRE MÁGICO ES: ",
+            show: true,
+            show2: false
+    }    
     },
     methods: {
         async traerCarta() {
@@ -154,12 +166,22 @@ let datosCarta = new Vue({
             console.log("puntaje: " + this.puntaje) 
 
             // sostener memoria
-            localStorage.setItem("puntos", this.puntaje);
-            const puntajeAcumulado = localStorage.getItem("puntos");
-            console.log("aca " + puntajeAcumulado)
+            // localStorage.setItem("puntos", this.puntaje);
+            // const puntajeAcumulado = localStorage.getItem("puntos");
+            // console.log("aca " + puntajeAcumulado)
 
                        
         },
+
+           
+        mostrarNombreInv: function() {
+            this.nombreInv = this.nombreIngresado.split("").reverse().join("")
+            this.show = false
+            this.show2 = true
+            this.nombreInv = this.records.jugadorActual 
+            this.puntaje = this.records.puntajeActual 
+            console.log(this.records.jugadorActual) 
+          },
      
 
     },
@@ -172,21 +194,4 @@ let datosCarta = new Vue({
 
 datosCarta.traerCarta()
 
-
-
-const seccionPuntajes = new Vue({
-    el: '#seccionPuntajes',
-    data: {
-        records: {
-            TROMEDLOV: 2000,
-            RETTOPYRRAH: 1620,
-            ENOIAMREH: 950,
-           
-            
-
-        }
-        
-    }
-
-})
 

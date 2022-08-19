@@ -17,5 +17,5 @@ let app = new Vue({
     },
   });
   
-  let nombreJugador=localStorage.setItem('nombre', this.nombreInv);        
-  console.log(nombreJugador)
+  // let nombreJugador=localStorage.setItem('nombre', this.nombreInv);        
+  // console.log(nombreJugador)
