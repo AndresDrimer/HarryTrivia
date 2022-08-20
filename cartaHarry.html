@@ -65,12 +65,17 @@
             </transition>
             
             <button id="botonDesaparece" v-if="nombreIngresado" class="botonRojo" @click="mostrarNombreInv" v-show="show">VER NOMBRE MÁGICO</button>
-            
+            <div v-show="show3">
             <p class="textoPadding" v-if="nombreInv" id="textoMensaje" class="desaparece">{{mensaje}}</p>
-
+            
             <transition name="fade">
-                <div id="vueNombreInvertido"> {{nombreInv}}</div>
+                <div id="vueNombreInvertido"> {{nombreInv}}</div> 
             </transition>
+                 <div id="harryCarita">
+                     <img src="img/harry-potter-svgrepo-com.svg" alt="imagen harry potter" height="200px">
+                </div>
+            </div>
+
             
         </div>
         
@@ -98,12 +103,14 @@
 
         <div class="contenedorNombre">
             <div id="botoneraFinalNombre">
-                <a href="#datosCarta" class="botonLink">
-                <button type="button" class="botonAmarillo" @click="traerCarta()">NUEVA CARTA</a></button> 
+               
+                
+                <a href="#headerTemplate" class="botonLink">
+                <button type="button" class="botonAmarillo" @click="nuevaCarta()">NUEVA CARTA</a></button> 
                 </a>
             </div>
         </div>
-        <a href="" class="botonLink">
+        <a href="/terminar.html" class="botonLink">
         <button type="button" class="botonRojo" >TERMINAR JUEGO</a></button></a>
     </div>
     

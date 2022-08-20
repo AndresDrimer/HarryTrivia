@@ -23,7 +23,7 @@ body{
     background-image: url('img/desktop/fondo landing desktop.png');
     object-fit: fill;
 }
-#contenedorLogoIndex{
+.contenedorLogoIndex{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,6 +147,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 400px;
     margin: 0 auto;
 }
@@ -188,19 +189,18 @@ body{
 #textoMensaje{
 padding-top: 55px;
 font-size: 25px;
+text-align: center;
+}
+#harryCarita{
+    display: flex;
+    justify-content: center;
 }
    
 @keyframes hacerAparecer {
-    0%{
+    from{
         opacity:0;
     }
-    50%{
-        opacity: 0;
-    }
-    90%{
-        opacity: 0;
-    }
-    100%{
+    to{
         opacity:1;
     }
 }
@@ -277,6 +277,14 @@ font-size: 25px;
     text-decoration: none;
     color:#F4F3F1
 }
+
+
+/* ADIOS */
+#logoAdios{
+    margin-top: 14%;
+}
+
+
 
 /* RESPONSIVE */
 /* celular */

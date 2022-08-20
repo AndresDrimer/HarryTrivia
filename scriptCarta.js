@@ -51,7 +51,9 @@ let datosCarta = new Vue({
             nombreInv: "",
             mensaje: "TU NOMBRE MÁGICO ES: ",
             show: true,
-            show2: false
+            show2: false,
+            show3: false
+            
             
     }    
     },
@@ -150,6 +152,8 @@ let datosCarta = new Vue({
         this.actores.push(actoreOk,actoreMal1,actoreMal2)
         this.actores.sort()
        
+
+        
         },
         
         puntuar() {
@@ -176,7 +180,7 @@ let datosCarta = new Vue({
             // localStorage.setItem("puntos", this.puntaje);
             // const puntajeAcumulado = localStorage.getItem("puntos");
             // console.log("aca " + puntajeAcumulado)
-
+            
                        
         },
 
@@ -185,8 +189,14 @@ let datosCarta = new Vue({
             this.nombreInv = this.nombreIngresado.split("").reverse().join("").toUpperCase()
             this.show = false
             this.show2 = true
+            this.show3 = true
+            
           },
-     
+        
+        nuevaCarta: function() {
+            this.traerCarta()
+            this.show3=false
+        }
 
     },
 
