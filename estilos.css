@@ -40,6 +40,9 @@ body{
 /* CARTA HARRY: HEADER */
 #bodyCartaHarry{
     animation: transitionIn 0.5s;
+    
+   
+
 }
 @keyframes transitionIn {
     from {
@@ -260,6 +263,13 @@ text-align: center;
     position: relative;
 } 
 
+#listaPuntajes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
 .listaRecords{
     font-family: Harry;
     font-size: 20px;
@@ -271,14 +281,22 @@ text-align: center;
 
 }
 #puntajePropio{
-    font-size: 40px;
+    font-size: 25px;
 }
 .botonLink{
     text-decoration: none;
     color:#F4F3F1
 }
 
+#recordOk{
+    border: dotted 5px #8A757E;
+    color: green;
+    text-align: center;
+    font-family: Harry;
+    font-size: 30px;
+    max-width: 300px;
 
+}
 /* ADIOS */
 #logoAdios{
     margin-top: 14%;

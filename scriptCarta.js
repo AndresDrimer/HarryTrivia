@@ -52,7 +52,13 @@ let datosCarta = new Vue({
             mensaje: "TU NOMBRE MÁGICO ES: ",
             show: true,
             show2: false,
-            show3: false
+            show3: false,
+            show4: false,
+            objPuntajes:{
+                TROMEDLOV: 1950,
+                ENOIAMREH: 1720,
+                RETTOPYRRAH: 1600,
+            },
             
             
     }    
@@ -151,8 +157,7 @@ let datosCarta = new Vue({
         this.actoreMal2=actoreMal2
         this.actores.push(actoreOk,actoreMal1,actoreMal2)
         this.actores.sort()
-       
-
+        
         
         },
         
@@ -176,7 +181,8 @@ let datosCarta = new Vue({
             this.puntaje += contador  
             console.log("puntaje: " + this.puntaje) 
 
-            // sostener memoria
+            
+   
             // localStorage.setItem("puntos", this.puntaje);
             // const puntajeAcumulado = localStorage.getItem("puntos");
             // console.log("aca " + puntajeAcumulado)
@@ -187,10 +193,14 @@ let datosCarta = new Vue({
            
         mostrarNombreInv: function() {
             this.nombreInv = this.nombreIngresado.split("").reverse().join("").toUpperCase()
+            let nomJue =this.nombreInv
             this.show = false
             this.show2 = true
             this.show3 = true
             
+            if (this.puntaje > 1950) {
+                this.show4 = true
+            }                 
           },
         
         nuevaCarta: function() {

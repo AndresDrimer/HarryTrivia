@@ -86,16 +86,11 @@
         <div id="seccionPuntajes">
             <div id="pergaminoPuntaje">
                 <ul id="listaPuntajes" v-show="show2">
-                    
-                    <li class="listaRecords" id="puntajePropio">{{nombreInv}}......{{puntaje}}pts.</li>
-                    <li class="listaRecords"></li>
-                    <li class="listaRecords"></li>
-                    <li class="listaRecords"></li>
-
-                    <li class="listaRecords">  *******  puntajes legendarios  *******  </li>
-                    <li class="listaRecords">TROMEDLOV......1900pts.</li>
-                    <li class="listaRecords">RETTOPYRRAH......1650pts.</li>
-                    <li class="listaRecords">ENOIAMREH......1230pts.</li>  
+                    <li class="listaRecords" id="tuPuntaje">{{nombreInv}} : {{puntaje}}</li>
+                    <li class="listaRecords" v-show="show4" id="recordOk">   PUNTAJE RECORD!!!  </li>
+                    <li class="listaRecords"> ***  PUNTAJES LEGENDARIOS  ***</li>
+                    <li class="listaRecords" v-for="(key, value) in objPuntajes">{{value}} : {{key}}pts.</li>
+                     
                 </ul>
             </div>
         </div>
@@ -113,8 +108,8 @@
         <a href="/terminar.html" class="botonLink">
         <button type="button" class="botonRojo" >TERMINAR JUEGO</a></button></a>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8"></script>
     <!-- <script src="nombreMagico.js"></script> -->
     <script src="scriptCarta.js"></script>
     
